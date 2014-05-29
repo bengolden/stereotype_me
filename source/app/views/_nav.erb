@@ -1,0 +1,10 @@
+<div class = "nav">
+  <h1 id="page_title">Stereotype.me</h1>
+  <ul>
+    <% if session[:user_id] %>
+      <li><a href="/profile">Profile</a></li>
+      <li><a href="/rate">Rate People</a></li>
+      <li><a href="/logout">Log Out</a></li>
+    <% end %>
+  </ul>
+</div>

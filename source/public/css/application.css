@@ -1,17 +1,93 @@
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  background-color: #3C444F
+}
+
+
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}
-th {
-  text-align: left;
-}
-
-h1, h2 {
-	text-align: center
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  width: 90%;
+  height: 50%;
+  /*border: 1px dashed black;*/
+  background: #21B480;
+  border-radius: 10px;
 }
 
-#errors {
+.login_form{
+  position: relative;
+
+  padding-left: 35%;
+  margin-top: 10%;
+}
+
+.register_form{
+  padding-left: 35%;
+  margin-bottom: 10%;
+
+}
+
+#sign-in {
+  margin: auto;
+  border: 2px solid black;
+  width: 70%;
+  margin-top: 6%;
+  margin-bottom: 2%;
+
+}
+
+#errors{
+  font-size: 1em;
   color: red;
+  margin-top: 10px;
+  float: right;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  background-color: #2E2F31;
+  color: white;
+}
+
+.nav ul {
+  list-style-type: none;
+  display: inline-block;
+  padding-left: 15px;
+}
+
+.nav li {
+  display: inline;
+  margin: 0px 10px;
+}
+
+.nav h1 {
+  padding-left: 20px;
+}
+
+.nav a {
+  color: white;
+}
+
+.nav a:hover {
+  color: yellow;
+}
+
+.welcome_page {
+  color: #FEFDFE;
+  padding-left: 10px;
+}
+
+.welcome_page a {
+  color: #FEFDFE;
+}
+.welcome_page a:hover {
+  color: #33495E;
 }
