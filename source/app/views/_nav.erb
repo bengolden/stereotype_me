@@ -1,0 +1,9 @@
+<div class = "nav">
+  <ul>
+    <li><a href="/">Home</a></li>
+    <% if session[:user_id] %>
+      <li><a href="/dashboard">Profile</a></li>
+      <li><a href="/logout">Log Out</a></li>
+    <% end %>
+  </ul>
+</div>
