@@ -1,3 +1,16 @@
 <% if session[:user_id] %>
-  sup
+  <center><img src="http://placekitten.com/g/300/300"></center>
+  You're fucking with: <%=@sampled_user.email%><br>
+  <%=@sampled_question.question%><br>
+
+
+  <div class="rate_form">
+    <form method="post" action="/rate">
+      <input type="hidden" name="user_id" value="<%=@sampled_user.id%>">
+      <input type="hidden" name="question_id" value="<%=@sampled_question.id%>">
+      <span class="slider_attrs"><%=@sampled_question.endpoint1%><input type="range" name="slider_points" min="1" max="100"><%=@sampled_question.endpoint2%></span><br>
+      <input type="submit" value="Stereotype!">
+    </form>
+  </div>
+
 <% end %>
