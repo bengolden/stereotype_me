@@ -1,0 +1,11 @@
+<%= current_user.email %>
+<div>
+<img src="<%= current_user.image_url %>", alt="user image">
+</div>
+
+<% current_user.properties.distinct.each do |property| %>
+
+<p><%= property.question %></p>
+<p><%= property.votes.length %> votes</p>
+<p><%= property.votes.map{|vote| vote.value}.inject(:+) /  property.votes.length %>
+<%end%>

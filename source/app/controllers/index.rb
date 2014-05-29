@@ -33,5 +33,5 @@ get '/rate' do
 end
 
 get '/profile' do
-
+  erb :profile
 end
