@@ -3,7 +3,7 @@ class CreateVotes < ActiveRecord::Migration
     create_table :votes do |t|
       t.integer :voter_id
       t.integer :voted_on_id
-      t.integer :attribute_id
+      t.integer :property_id
       t.integer :value
 
       t.timestamps
