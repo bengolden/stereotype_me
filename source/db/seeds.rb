@@ -1,7 +1,7 @@
 require 'faker'
 
 50.times do
-  User.create(email: Faker::Internet.email, password: "password")
+  User.create(email: Faker::Internet.email, password: "password", image_url: "http://www.spatch.net/cattown/cat-businessman.jpg")
 end
 
 Property.create(question: "How old am I?", endpoint1: '0', endpoint2: '100')
