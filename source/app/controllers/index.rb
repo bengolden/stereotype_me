@@ -4,24 +4,19 @@ end
 
 post '/login' do
   @user = User.authenticate(params[:email], params[:password])
-    if @student
+    if @user
       give_session
-      redirect '/dashboard'
+      redirect '/rate'
     else
       redirect '/'
     end
-end
-
-get '/dashboard' do
-  @user = current_user
-  erb :dashboard
 end
 
 post '/signup' do
   @user = User.new(email: params[:email], password: params[:password])
   if @user.save
     give_session
-    redirect '/'
+    redirect '/rate'
   else
     redirect '/'
   end
