@@ -8,9 +8,9 @@ $(document).ready(function() {
             data : postData,
         })
         .done(function(response) {
-            $("#rate_page").load("/rate #rate_page");
+            console.log(response);
+            $("#rate_page").html(response);
         })
-        .fail(function(){
-        });
+        .fail(function(){});
     });
 });

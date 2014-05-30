@@ -1,0 +1,11 @@
+<br>
+Total Users - <%=@users.count%><br>
+Total Votes - <%=@votes.count%><br>
+Total Properties - <%=@properties.count%><br><br>
+User Submitted Suggestions - <br>
+<ol>
+<% @suggestions.each do |suggestion| %>
+  <li><%=suggestion.suggestion%></li><br>
+    Left Endpoint - <%=suggestion.endpoint1%> | Right Endpoint - <%=suggestion.endpoint2%><br>
+<% end %>
+</ul>
