@@ -9,9 +9,12 @@ helpers do
   end
 
   def get_random_user_and_question(user)
-    @possible_users = (User.all-[user])
+    last_user = User.find_by_id(session[:sampled_user_id])
+    last_question = Property.find_by_id(session[:question_id])
+    @possible_users = (User.all-[user]-[last_user])
     @sampled_user = @possible_users.sample
-    @sampled_question = Property.all.sample
+    @sampled_question = (Property.all-[last_question]).sample
+
     {
     question: @sampled_question.question,
     sampled_user_id: @sampled_user.id,
