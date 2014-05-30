@@ -29,7 +29,7 @@ end
 
 get '/rate' do
   @user = current_user
-  get_random_user_and_question(@user)
+  @rate_data = get_random_user_and_question(@user)
   erb :rate
 end
 
@@ -38,15 +38,16 @@ get '/profile' do
 end
 
 post '/rate' do
-  p "++++++++++++++++++++++++++++++"
   @user = current_user
   new_vote = Vote.new(voter_id: @user.id,
                       voted_on_id: params[:user_id],
                       property_id: params[:question_id],
                       value: params[:slider_points])
   if new_vote.save
-    get_random_user_and_question(@user)
-    erb :rate
+    if request.xhr?
+      @rate_data = get_random_user_and_question(@user)
+      erb :rate
+    end
   else
     redirect '/rate'
   end
