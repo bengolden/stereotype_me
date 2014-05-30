@@ -1,0 +1,18 @@
+<center>
+  <img class = "rating_photo" src="<%=@rate_data[:image_url]%>">
+
+  <div class="rate_info">
+
+  <p id="voting_question"><%=@rate_data[:question]%></p>
+    <div class="rate_form">
+
+    <form id="rate" method="post" action="/rate">
+      <input id="hidden_user" type="hidden" name="user_id" value="<%=@rate_data[:sampled_user_id]%>">
+      <input id="hidden_question" type="hidden" name="question_id" value="<%=@rate_data[:question_id]%>">
+      <span class="slider_attrs"><span class="endpoint"><%=@rate_data[:endpoint1]%></span> <input type="range" name="slider_points" min="1" max="100"><span class="endpoint"> <%=@rate_data[:endpoint2]%></span></span><br>
+      <input class = "s_button" type="submit" value="Stereotype">
+    </form>
+  </div>
+
+  </div>
+</center>

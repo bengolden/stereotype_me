@@ -1,0 +1,29 @@
+<center>
+<h2>Profile page</h2>
+  <div>
+    <img src="<%= current_user.image_url %>", alt="user image">
+  </div>
+  <% if current_user.properties.length == 0 %>
+  <div>
+    <p>No votes thus far</p>
+  </div>
+
+  <%end%>
+
+  <div>
+    <% current_user.properties.distinct.each do |property| %>
+      <div class = "display_question">
+        <% votes_for_current_user = property.votes.find_all_by_voted_on_id(current_user.id) %>
+        <% total_votes = votes_for_current_user.length %>
+        <p><%= property.question %></p>
+        <% slider = votes_for_current_user.map{|vote| vote.value}.inject(:+) / total_votes %>
+        <p>
+          <%= slider %>% <%= property.endpoint1 %> / <%= 100 - slider %>% <%= property.endpoint2 %> (<%= total_votes %> votes)
+        </p>
+<!--         <p><div class="endpoint1"><#%= property.endpoint1 %></div></p>
+        <p><div class="endpoint2"><#%= property.endpoint2 %></div></p>
+        <p class = "bottom_of_box"></p> -->
+      </div>
+    <%end%>
+  </div>
+</center>
