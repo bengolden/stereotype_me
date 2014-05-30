@@ -13,7 +13,7 @@ post '/login' do
 end
 
 post '/signup' do
-  @user = User.new(email: params[:email], password: params[:password])
+  @user = User.new(params)
   if @user.save
     give_session
     redirect '/rate'
