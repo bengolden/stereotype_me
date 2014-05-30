@@ -69,6 +69,12 @@ post '/rate' do
   end
 end
 
+get '/leaderboard' do
+  @properties = Property.all
+  @users = User.all
+  erb :leaderboard
+end
+
 get '/adm1n' do
   @users = User.all
   @votes = Vote.all
