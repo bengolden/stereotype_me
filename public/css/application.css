@@ -33,6 +33,10 @@ body{
 
 }
 
+.signup {
+  padding-left: 10px;
+}
+
 #sign-in {
   margin: auto;
   border: 2px solid black;
@@ -60,7 +64,7 @@ a {
 
 .nav ul {
   list-style-type: none;
-  display: inline-block;
+  display: inline;
   padding-left: 15px;
 }
 
@@ -101,6 +105,11 @@ a {
 
 .slider_attrs {
   width: 350px;
+
+}
+
+.endpoint {
+
 }
 
 .submit_button {
@@ -150,8 +159,14 @@ input[type="range"]::-webkit-slider-thumb {
   clear: both;
 }
 
-.rating_photo {
+.rating_photo_container {
   padding-top: 30px;
+  height: 400px;
+}
+
+.rating_photo {
+  max-height: 100%;
+  max-width: auto;
 }
 
 #voting_question {
