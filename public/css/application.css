@@ -128,6 +128,24 @@ h2 {
   float: right;
 }
 
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 30px;
+    background-color: #95A5A6;
+    width: 350px;
+    height:30px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #EF4836;
+    /*opacity: 0.5;*/
+    width: 10px;
+    height: 48px;
+    border-radius: 5px;
+}
+
 .bottom_of_box {
   clear: both;
 }
