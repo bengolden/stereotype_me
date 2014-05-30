@@ -1,5 +1,5 @@
 get '/' do
-  erb :index
+  redirect '/rate'
 end
 
 post '/login' do
@@ -12,13 +12,18 @@ post '/login' do
     end
 end
 
+get '/signup' do
+
+erb :signup
+end
+
 post '/signup' do
   @user = User.new(params)
   if @user.save
     give_session
     redirect '/rate'
   else
-    redirect '/'
+    redirect '/signup'
   end
 end
 
@@ -41,10 +46,17 @@ end
 
 post '/rate' do
   @user = current_user
-  new_vote = Vote.new(voter_id: @user.id,
-                      voted_on_id: session[:sampled_user_id],
-                      property_id: session[:question_id],
-                      value: params[:slider_points])
+  if @user
+    new_vote = Vote.new(voter_id: @user.id,
+                        voted_on_id: session[:sampled_user_id],
+                        property_id: session[:question_id],
+                        value: params[:slider_points])
+  else
+    new_vote = Vote.new(voter_id: nil,
+                        voted_on_id: session[:sampled_user_id],
+                        property_id: session[:question_id],
+                        value: params[:slider_points])
+  end
   if new_vote.save
     if request.xhr?
       @rate_data = get_random_user_and_question(@user)
