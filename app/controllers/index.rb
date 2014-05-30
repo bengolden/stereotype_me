@@ -68,3 +68,31 @@ post '/rate' do
     redirect '/rate'
   end
 end
+
+get '/leaderboard' do
+  @properties = Property.all
+  @users = User.all
+  erb :leaderboard
+end
+
+get '/adm1n' do
+  @users = User.all
+  @votes = Vote.all
+  @properties = Property.all
+  @suggestions = Suggestion.all
+  erb :admin
+end
+
+get '/property/new' do
+  erb :new_property
+end
+
+post '/property/new' do
+  user = current_user
+  new_suggestion = Suggestion.new(suggestion: params[:question], endpoint1: params[:endpoint1], endpoint2: params[:endpoint2], user_id: user.id)
+  if new_suggestion.save
+    redirect '/rate'
+  else
+    redirect '/rate'
+  end
+end

@@ -4,6 +4,8 @@
     <% if session[:user_id] %>
       <li><a href="/profile">Profile</a></li>
       <li><a href="/rate">Rate People</a></li>
+      <li><a href="/leaderboard">Leaderboard</a></li>
+      <li><a href="/property/new">Suggest New Question</a></li>
       <li><a href="/logout">Log Out</a></li>
     <% else %>
       <li><form action="/login" method="post">
