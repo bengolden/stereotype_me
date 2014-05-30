@@ -1,7 +1,7 @@
 require 'faker'
 
 50.times do
-  User.create(email: Faker::Internet.email, password: "password")
+  User.create(email: Faker::Internet.email, password: "password", image_url: "http://www.spatch.net/cattown/cat-businessman.jpg")
 end
 
 Property.create(question: "How old am I?", endpoint1: '0', endpoint2: '100')
@@ -17,6 +17,6 @@ Property.create(question: "What is my IQ?", endpoint1: "60", endpoint2: "140+")
 User.all.each do |user|
   5.times do
     voted_on = (User.all - [user]).sample
-    user.votes_submitted << Vote.create(voted_on_id: voted_on.id, property_id: Property.all.sample.id, value: rand(0..100))
+    user.submitted_votes << Vote.create(voted_on_id: voted_on.id, property: Property.all.sample, value: rand(0..100))
   end
 end
