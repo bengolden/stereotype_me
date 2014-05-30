@@ -1,7 +1,9 @@
 require 'faker'
 
+
+images = ["http://www.spatch.net/cattown/cat-businessman.jpg", "http://img3.wikia.nocookie.net/__cb20130606164012/animalcrossing/images/3/30/Monkey.jpg"]
 50.times do
-  User.create(email: Faker::Internet.email, password: "password", image_url: "http://www.spatch.net/cattown/cat-businessman.jpg")
+  User.create(email: Faker::Internet.email, password: "password", image_url: images.sample)
 end
 
 Property.create(question: "How old am I?", endpoint1: '0', endpoint2: '100')

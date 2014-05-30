@@ -52,3 +52,9 @@ post '/rate' do
     redirect '/rate'
   end
 end
+
+get '/leaderboard' do
+  @properties = Property.all
+  @users = User.all
+  erb :leaderboard
+end
