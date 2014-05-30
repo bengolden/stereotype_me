@@ -1,21 +1,23 @@
+<center>
 <h2>Profile page</h2>
-<div>
-  <img src="<%= current_user.image_url %>", alt="user image">
-</div>
-<% if current_user.properties.length == 0 %>
-<div>
-  <p>No votes thus far</p>
-</div>
+  <div>
+    <img src="<%= current_user.image_url %>", alt="user image">
+  </div>
+  <% if current_user.properties.length == 0 %>
+  <div>
+    <p>No votes thus far</p>
+  </div>
 
-<%end%>
-
-<div>
-  <% current_user.properties.distinct.each do |property| %>
-    <% total_votes = property.votes.length %>
-    <p><%= property.question %></p>
-    <% slider = property.votes.map{|vote| vote.value}.inject(:+) / total_votes %>
-    <p>
-      <%= slider %>% <%= property.endpoint1 %> / <%= 100 - slider %>% <%= property.endpoint2 %> (<%= total_votes %> votes)
-    </p>
   <%end%>
-</div>
+
+  <div>
+    <% current_user.properties.distinct.each do |property| %>
+      <% total_votes = property.votes.length %>
+      <p><%= property.question %></p>
+      <% slider = property.votes.map{|vote| vote.value}.inject(:+) / total_votes %>
+      <p>
+        <%= slider %>% <%= property.endpoint1 %> / <%= 100 - slider %>% <%= property.endpoint2 %> (<%= total_votes %> votes)
+      </p>
+    <%end%>
+  </div>
+</center>

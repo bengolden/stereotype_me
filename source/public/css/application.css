@@ -92,3 +92,17 @@ a {
 .welcome_page a:hover {
   color: #33495E;
 }
+
+.question {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.slider_attrs {
+  width: 350px;
+}
+
+.submit_button {
+  margin-top: 20px;
+}
