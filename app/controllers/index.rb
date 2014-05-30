@@ -12,13 +12,18 @@ post '/login' do
     end
 end
 
+get '/signup' do
+
+erb :signup
+end
+
 post '/signup' do
   @user = User.new(params)
   if @user.save
     give_session
     redirect '/rate'
   else
-    redirect '/'
+    redirect '/signup'
   end
 end
 
