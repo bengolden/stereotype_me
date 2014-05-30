@@ -1,3 +1,5 @@
+<meta charset=utf-8 />
+  <script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
 <center>
 <h2>Profile page</h2>
   <div>
@@ -11,19 +13,28 @@
   <%end%>
 
   <div>
+    <% sliders = [] %>
     <% current_user.properties.distinct.each do |property| %>
       <div class = "display_question">
         <% votes_for_current_user = property.votes.find_all_by_voted_on_id(current_user.id) %>
         <% total_votes = votes_for_current_user.length %>
         <p><%= property.question %></p>
         <% slider = votes_for_current_user.map{|vote| vote.value}.inject(:+) / total_votes %>
-        <p>
-          <%= slider %>% <%= property.endpoint1 %> / <%= 100 - slider %>% <%= property.endpoint2 %> (<%= total_votes %> votes)
-        </p>
-<!--         <p><div class="endpoint1"><#%= property.endpoint1 %></div></p>
-        <p><div class="endpoint2"><#%= property.endpoint2 %></div></p>
-        <p class = "bottom_of_box"></p> -->
+        <% sliders.push(slider * 2.8 + 80) %>
+          <div class ="slider_background">
+            <div class="left_endpoint"><%= property.endpoint1 %></div>
+            <div class="d3"></div>
+            <div class="right_endpoint"><%= property.endpoint2 %></div>
+          </div>
       </div>
     <%end%>
   </div>
 </center>
+
+<script type="text/javascript">
+  d3.selectAll(".d3")
+  .data(<%= sliders %>)
+  .transition()
+  .duration(2000)
+  .style("margin-left", function(d) { return  d + "px"; });
+</script>

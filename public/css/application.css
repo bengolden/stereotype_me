@@ -128,6 +128,24 @@ h2 {
   float: right;
 }
 
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 30px;
+    background-color: #95A5A6;
+    width: 350px;
+    height:30px;
+    border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+     -webkit-appearance: none;
+    background-color: #EF4836;
+    /*opacity: 0.5;*/
+    width: 10px;
+    height: 48px;
+    border-radius: 5px;
+}
+
 .bottom_of_box {
   clear: both;
 }
@@ -153,4 +171,33 @@ h2 {
 .s_button {
   margin-top: 20px;
   font-size: 20px;
+}
+
+.left_endpoint {
+  float: left;
+  padding-top: 8px;
+}
+
+.right_endpoint {
+  float: right;
+  padding-top: 8px;
+}
+
+.slider_background {
+  height: 40px;
+  border-radius: 5px;
+  margin: 10px;
+  background-color: lightgray;
+}
+
+.d3{
+  background-color: red;
+  margin-top: 8px;
+  font-size: 16px;
+  color: black;
+  padding: 10px;
+  width: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+  position: absolute;
 }
