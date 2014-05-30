@@ -29,7 +29,7 @@ end
 
 get '/rate' do
   @user = current_user
-  get_random_user_and_question(@user)
+  @rate_data = get_random_user_and_question(@user)
   erb :rate
 end
 
@@ -46,7 +46,8 @@ post '/rate' do
                       value: params[:slider_points])
   if new_vote.save
     if request.xhr?
-      return get_random_user_and_question(@user).to_json
+      @rate_data = get_random_user_and_question(@user)
+      erb :rate
     end
   else
     redirect '/rate'
