@@ -60,17 +60,22 @@ a {
 .nav {
   background-color: #2E2F31;
   color: white;
+  box-shadow: 2px 2px 20px #000000;
 }
 
 .nav ul {
   list-style-type: none;
   display: inline;
-  padding-left: 15px;
 }
 
 .nav li {
   display: inline;
-  margin: 0px 10px;
+  margin: 7px;
+}
+
+.nav li form {
+  display: inline;
+  margin-left: -25px;
 }
 
 .nav h1 {
@@ -105,7 +110,6 @@ a {
 
 .slider_attrs {
   width: 350px;
-
 }
 
 .endpoint {
@@ -153,6 +157,7 @@ input[type="range"]::-webkit-slider-thumb {
     width: 10px;
     height: 48px;
     border-radius: 5px;
+    box-shadow: 2px 2px 20px #000000;
 }
 
 .bottom_of_box {
@@ -167,6 +172,8 @@ input[type="range"]::-webkit-slider-thumb {
 .rating_photo {
   max-height: 100%;
   max-width: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 20px #000000;
 }
 
 #voting_question {
@@ -177,15 +184,19 @@ input[type="range"]::-webkit-slider-thumb {
   width: 400px;
   height: 50px;
   padding-top: 17px;
+  box-shadow: 2px 2px 20px #000000;
 }
 
 .endpoint {
   font-size: 20px;
+
 }
 
 .s_button {
   margin-top: 20px;
   font-size: 20px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px #000000;
 }
 
 .left_endpoint {
@@ -203,6 +214,11 @@ input[type="range"]::-webkit-slider-thumb {
   border-radius: 5px;
   margin: 10px;
   background-color: lightgray;
+
+}
+
+.profile_content{
+  color: #FEFDFE;
 }
 
 .d3{

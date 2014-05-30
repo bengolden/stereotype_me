@@ -1,17 +1,18 @@
 <meta charset=utf-8 />
   <script src="http://d3js.org/d3.v3.min.js" type="text/javascript" charset="utf-8"></script>
 <center>
-<h2>Profile page</h2>
-  <div>
-    <img src="<%= current_user.image_url %>", alt="user image">
-  </div>
-  <% if current_user.properties.length == 0 %>
-  <div>
-    <p>No votes thus far</p>
-  </div>
+  <div class="profile_content">
+    <h2>Profile page</h2>
+      <div class='rating_photo_container'>
+        <img class="rating_photo" src="<%= current_user.image_url %>", alt="user image">
+      </div>
+      <% if current_user.properties.length == 0 %>
+      <div>
+        <p>No votes thus far</p>
+      </div>
 
-  <%end%>
-
+      <%end%>
+  </div>
   <div>
     <% sliders = [] %>
     <% current_user.properties.distinct.each do |property| %>
