@@ -1,9 +1,8 @@
-<center><img src="http://placekitten.com/g/300/300"></center> <!-- CHANGE IMAGE URL -->
+<center><img src="@rate_data[:image_url]"></center>
 
   <div class="rate_info">
   <p id="voting_on">You're fucking with: <%=@rate_data[:sampled_user_id]%></p>
   <p id="voting_question"><%=@rate_data[:question]%></p>
-
 
     <form id="rate" method="post" action="/rate">
       <input id="hidden_user" type="hidden" name="user_id" value="<%=@rate_data[:sampled_user_id]%>">

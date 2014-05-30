@@ -38,7 +38,6 @@ get '/profile' do
 end
 
 post '/rate' do
-  p "++++++++++++++++++++++++++++++"
   @user = current_user
   new_vote = Vote.new(voter_id: @user.id,
                       voted_on_id: params[:user_id],
