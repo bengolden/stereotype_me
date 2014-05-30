@@ -12,12 +12,17 @@
 
   <div>
     <% current_user.properties.distinct.each do |property| %>
-      <% total_votes = property.votes.length %>
-      <p><%= property.question %></p>
-      <% slider = property.votes.map{|vote| vote.value}.inject(:+) / total_votes %>
-      <p>
-        <%= slider %>% <%= property.endpoint1 %> / <%= 100 - slider %>% <%= property.endpoint2 %> (<%= total_votes %> votes)
-      </p>
+      <div class = "display_question">
+        <% total_votes = property.votes.length %>
+        <p><%= property.question %></p>
+        <% slider = property.votes.map{|vote| vote.value}.inject(:+) / total_votes %>
+        <p>
+          <%= slider %>% <%= property.endpoint1 %> / <%= 100 - slider %>% <%= property.endpoint2 %> (<%= total_votes %> votes)
+        </p>
+<!--         <p><div class="endpoint1"><#%= property.endpoint1 %></div></p>
+        <p><div class="endpoint2"><#%= property.endpoint2 %></div></p>
+        <p class = "bottom_of_box"></p> -->
+      </div>
     <%end%>
   </div>
 </center>
