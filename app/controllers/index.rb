@@ -79,7 +79,17 @@ end
 
 get '/leaderboard' do
   @properties = Property.all
-  @users = User.all
+  users = User.all
+  @left_most = {}
+  @right_most = {}
+  @properties.each do |property|
+    users_with_votes = property.list_users_with_votes
+    sorted_users = users_with_votes.sort_by do |u|
+      u[1].map{|v|v.value}.inject(:+) / u[1].length
+    end
+    @left_most[property] = users.find_by_id(sorted_users.first[0])
+    @right_most[property] = users.find_by_id(sorted_users.last[0])
+  end
   erb :leaderboard
 end
 

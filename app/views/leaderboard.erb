@@ -1,25 +1,19 @@
 <center>
   <h2>Leaderboard</h2>
-
   <% @properties.each do |property| %>
   <p class = "leaderboard_header"><%= property.question %></p>
-
   <div>
-    <% users_with_votes = property.votes.group_by{ |vote| vote.voted_on_id} %>
-    <% sorted_users = users_with_votes.sort_by{|u| u[1].map{|v|v.value}.inject(:+) / u[1].length } %>
-    <% left_most = @users.find_by_id(sorted_users.first[0]) %>
-    <% right_most = @users.find_by_id(sorted_users.last[0]) %>
     <div class = "leaders">
       <div>
         <div class='photo_container left_image'>
         <p>Biggest <%= property.endpoint1 %></p>
-          <img class = "photo" src="<%= left_most.image_url %>">
+          <img class = "photo" src="<%= @left_most[property].image_url %>">
         </div>
       </div>
       <div>
         <div class='photo_container right_image'>
         <p>Biggest <%= property.endpoint2 %></p>
-          <img class = "photo" src="<%= right_most.image_url %>">
+          <img class = "photo" src="<%= @right_most[property].image_url %>">
         </div>
         <div class = "bottom"></div>
       </div>
