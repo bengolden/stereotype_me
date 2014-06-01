@@ -164,12 +164,12 @@ input[type="range"]::-webkit-slider-thumb {
   clear: both;
 }
 
-.rating_photo_container {
+.photo_container {
   padding-top: 30px;
   height: 400px;
 }
 
-.rating_photo {
+.photo {
   max-height: 100%;
   max-width: auto;
   border-radius: 10px;

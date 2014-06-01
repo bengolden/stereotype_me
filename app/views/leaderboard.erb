@@ -13,13 +13,17 @@
     <% left_most = @users.find_by_id(sorted_users.first[0]) %>
     <div>
       <p>Biggest <%= property.endpoint1 %></p>
-      <img class = "left_image" src="<%= left_most.image_url %>">
+      <div class='photo_container'>
+        <img class = "photo left_image" src="<%= left_most.image_url %>">
+      </div>
   <!--   <p><%#= sorted_users.last.inspect %> - <%#=<sorted_users class="last value" 1="" 0=""></sorted_users> %> </p> -->
     </div>
     <div>
       <p>Biggest <%= property.endpoint2 %></p>
       <% right_most = @users.find_by_id(sorted_users.last[0]) %>
-      <img class = "right_image" src="<%= right_most.image_url %>">
+      <div class='photo_container'>
+        <img class = "photo right_image" src="<%= right_most.image_url %>">
+      </div>
     </div>
   </div>
   <%end%>
