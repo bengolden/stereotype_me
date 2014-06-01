@@ -2,27 +2,28 @@
   <h2>Leaderboard</h2>
 
   <% @properties.each do |property| %>
-  <p><%= property.question %></p>
+  <p class = "leaderboard_header"><%= property.question %></p>
 
   <div>
     <%users_with_votes = property.votes.group_by{ |vote| vote.voted_on_id}%>
 
     <% sorted_users = users_with_votes.sort_by{|u| u[1].map{|v|v.value}.inject(:+) / u[1].length } %>
 
-  <!--   <p><%#= sorted_users.first.inspect %> - <%#=sorted_users.first[1][0].value %> </p> -->
     <% left_most = @users.find_by_id(sorted_users.first[0]) %>
-    <div>
-      <p>Biggest <%= property.endpoint1 %></p>
-      <div class='photo_container'>
-        <img class = "photo left_image" src="<%= left_most.image_url %>">
+    <% right_most = @users.find_by_id(sorted_users.last[0]) %>
+    <div class = "leaders">
+      <div>
+        <div class='photo_container left_image'>
+        <p>Biggest <%= property.endpoint1 %></p>
+          <img class = "photo" src="<%= left_most.image_url %>">
+        </div>
       </div>
-  <!--   <p><%#= sorted_users.last.inspect %> - <%#=<sorted_users class="last value" 1="" 0=""></sorted_users> %> </p> -->
-    </div>
-    <div>
-      <p>Biggest <%= property.endpoint2 %></p>
-      <% right_most = @users.find_by_id(sorted_users.last[0]) %>
-      <div class='photo_container'>
-        <img class = "photo right_image" src="<%= right_most.image_url %>">
+      <div>
+        <div class='photo_container right_image'>
+        <p>Biggest <%= property.endpoint2 %></p>
+          <img class = "photo" src="<%= right_most.image_url %>">
+        </div>
+        <div class = "bottom"></div>
       </div>
     </div>
   </div>

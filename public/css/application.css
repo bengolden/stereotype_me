@@ -167,11 +167,12 @@ input[type="range"]::-webkit-slider-thumb {
 .photo_container {
   padding-top: 30px;
   height: 400px;
+  width: 600px;
 }
 
 .photo {
   max-height: 100%;
-  max-width: auto;
+  max-width: 100%;
   border-radius: 10px;
   box-shadow: 5px 5px 20px #000000;
 }
@@ -229,3 +230,31 @@ input[type="range"]::-webkit-slider-thumb {
   position: absolute;
 }
 
+.leaders {
+  border: 3px solid black;
+  width: 1200px;
+  height: 500px;
+}
+
+.left_image {
+  float: left;
+}
+
+.right_image {
+  float: right;
+}
+
+.bottom {
+  clear: both;
+}
+
+.leaderboard_header {
+  font-size: 22px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #2E2F31;
+  color: #DDDDDD;
+  width: 400px;
+  padding: 10px;
+  font-style: italic;
+}
