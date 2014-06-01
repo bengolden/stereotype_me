@@ -5,10 +5,8 @@
   <p class = "leaderboard_header"><%= property.question %></p>
 
   <div>
-    <%users_with_votes = property.votes.group_by{ |vote| vote.voted_on_id}%>
-
+    <% users_with_votes = property.votes.group_by{ |vote| vote.voted_on_id} %>
     <% sorted_users = users_with_votes.sort_by{|u| u[1].map{|v|v.value}.inject(:+) / u[1].length } %>
-
     <% left_most = @users.find_by_id(sorted_users.first[0]) %>
     <% right_most = @users.find_by_id(sorted_users.last[0]) %>
     <div class = "leaders">

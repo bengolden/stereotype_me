@@ -41,6 +41,14 @@ get '/rate' do
 end
 
 get '/profile' do
+  @active_properties = current_user.properties.distinct
+  @sliders = []
+  @active_properties.each do |property|
+    votes_for_current_user = property.votes_for_user(current_user.id)
+    total_votes = votes_for_current_user.length
+    slider = votes_for_current_user.map{|vote| vote.value}.inject(:+) / total_votes
+    @sliders.push(slider * 2.8 + 80)
+  end
   erb :profile
 end
 

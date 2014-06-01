@@ -24,4 +24,6 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
+
+
 end
