@@ -13,11 +13,11 @@ body{
   margin-top: 2%;
   margin-bottom: 2%;
   width: 90%;
-  height: 100%;
-  min-height: 1200px;
-  /*border: 1px dashed black;*/
+  min-height: 100%;
   background: #21B480;
   border-radius: 10px;
+  overflow: hidden;
+  padding-bottom: 30px;
 }
 
 .login_form{
@@ -164,16 +164,25 @@ input[type="range"]::-webkit-slider-thumb {
   clear: both;
 }
 
-.rating_photo_container {
+.photo_container {
   padding-top: 30px;
   height: 400px;
+  width: 600px;
 }
 
-.rating_photo {
+.photo {
   max-height: 100%;
-  max-width: auto;
+  max-width: 100%;
   border-radius: 10px;
   box-shadow: 5px 5px 20px #000000;
+}
+
+.small_photo_container {
+  height: 120px;
+  float: left;
+  width: 13%;
+  padding-top: 10px;
+  padding-left: 2%;
 }
 
 #voting_question {
@@ -217,10 +226,6 @@ input[type="range"]::-webkit-slider-thumb {
 
 }
 
-.profile_content{
-  color: #FEFDFE;
-}
-
 .d3{
   background-color: red;
   margin-top: 8px;
@@ -233,3 +238,36 @@ input[type="range"]::-webkit-slider-thumb {
   position: absolute;
 }
 
+.leaders {
+  border: 3px solid black;
+  width: 1200px;
+  height: 500px;
+}
+
+.left_image {
+  float: left;
+}
+
+.right_image {
+  float: right;
+}
+
+.bottom {
+  clear: both;
+}
+
+.leaderboard_header {
+  font-size: 22px;
+  border: 1px solid black;
+  border-radius: 8px;
+  background-color: #2E2F31;
+  color: #DDDDDD;
+  width: 400px;
+  padding: 10px;
+  font-style: italic;
+}
+
+.admin_info {
+  float: left;
+  width: 35%;
+}

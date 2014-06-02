@@ -24,4 +24,12 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end
 
+  def most_recent_comment_time
+    self.submitted_votes.last.created_at if self.submitted_votes.length > 0
+  end
+
+  def time_active
+    (self.most_recent_comment_time - self.created_at).round.to_s + "s" if self.submitted_votes.length > 0
+  end
+
 end

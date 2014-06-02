@@ -1,8 +1,21 @@
-<h2>Suggest a new property!</h2>
+<center>
+  <h2>Suggest a new question!</h2>
 
-<form action="/property/new" method="post">
-  <input type="text" name="question" placeholder="Enter question here"><br>
-  <input type="text" name="endpoint1" placeholder="Enter left endpoint here"><br>
-  <input type="text" name="endpoint2" placeholder="Enter right endpoint here"><br>
-  <input type="submit" value="Submit Suggestion">
-</form>
+  <form action="/property/new" method="post">
+    <p>
+      Question: <input type="text" name="question" placeholder="Enter question here">
+    </p>
+    <p>
+      Left endpoint:
+      <input type="text" name="endpoint1" placeholder="Enter left endpoint here">
+    </p>
+    <p>
+      Right endpoint:
+      <input type="text" name="endpoint2" placeholder="Enter right endpoint here">
+    </p>
+    <p>
+      (The endpoints appear at each side of the slider bar)
+    </p>
+    <input type="submit" value="Submit Suggestion">
+  </form>
+</center>
