@@ -1,11 +1,22 @@
-<br>
-Total Users - <%=@users.count%><br>
-Total Votes - <%=@votes.count%><br>
-Total Properties - <%=@properties.count%><br><br>
-User Submitted Suggestions - <br>
-<ol>
+<p>Total Users - <%=@users.count%></p>
+<p>Total Votes - <%=@votes.count%></p>
+<p>Total Properties - <%=@properties.count%></p>
+<p>User Submitted Suggestions - </p>
+<ul>
 <% @suggestions.each do |suggestion| %>
   <li><%=suggestion.suggestion%></li><br>
     Left Endpoint - <%=suggestion.endpoint1%> | Right Endpoint - <%=suggestion.endpoint2%><br>
 <% end %>
 </ul>
+<% @users.each do |user| %>
+<div class="small_photo_container">
+  <img class="photo" src="<%= user.image_url %>">
+</div>
+<div class = "admin_info">
+  <p>Email: <%=user.email%></p>
+  <p>Votes submitted: <%=user.submitted_votes.length%></p>
+  <p>Created at: <%=user.created_at%></p>
+  <p>Most recent vote: <%=user.most_recent_comment_time %></p>
+  <p>Time difference: <%=user.time_active%></p>
+</div>
+<%end%>
