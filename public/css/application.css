@@ -66,6 +66,7 @@ a {
 .nav ul {
   list-style-type: none;
   display: inline;
+  width: 600px;
 }
 
 .nav li {
@@ -270,4 +271,10 @@ input[type="range"]::-webkit-slider-thumb {
 .admin_info {
   float: left;
   width: 35%;
+}
+
+.addthis_toolbox {
+  float:right;
+  padding-right: 64px;
+  padding-top: 0;
 }
