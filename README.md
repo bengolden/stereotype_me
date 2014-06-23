@@ -1,6 +1,6 @@
 http://obscure-woodland-2002.herokuapp.com/
 
-## Git Workflow Instructions (THANKS JUSTIN!!!!!!)
+## Git Workflow Instructions
 
 1.) `git clone <link to master>`
 
